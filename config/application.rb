@@ -15,11 +15,16 @@ require 'action_text/engine'
 require 'action_view/railtie'
 require 'action_cable/engine'
 
+require 'google/cloud/dialogflow/v2'
+# Google::Cloud::Dialogflow::V2
+
 Bundler.require(*Rails.groups)
 
 module BankingNotifierApi
   class Application < Rails::Application
     config.load_defaults 6.0
     config.api_only = true
+    
+    config.eager_load_paths << Rails.root.join('lib')
   end
 end
