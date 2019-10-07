@@ -11,6 +11,8 @@ default: &default
   SMTP_ADDRESS: ''
   SMTP_PASSWORD: ''
   SMTP_USERNAME: ''
+  TWILIO_ACCOUNT_SID: ''
+  TWILIO_AUTH_TOKEN: ''
 
 test:
   <<: *default

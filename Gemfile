@@ -7,10 +7,12 @@ ruby '2.6.4'
 
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'figaro'
+gem 'google-cloud-dialogflow'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
 gem 'rails', '~> 6.0.0'
 gem 'sentry-raven'
+gem 'twilio-ruby'
 
 group :development, :test do
   gem 'brakeman'
@@ -37,4 +39,3 @@ group :test do
 end
 
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
-gem 'google-cloud-dialogflow'
