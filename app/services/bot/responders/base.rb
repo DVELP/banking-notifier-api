@@ -38,7 +38,7 @@ module Bot
 
       def final_response
         Twilio::TwiML::VoiceResponse.new do |response|
-          response.say(message: intent.fulfillment_text, voice: 'alice')
+          response.play(url: text_synthesis)
           response.hangup
         end
       end
@@ -50,9 +50,15 @@ module Bot
             input: 'speech',
             speech_timeout: 'auto'
           ) do |gather|
-            gather.say(message: intent.fulfillment_text, voice: 'alice')
+            gather.play(url: text_synthesis)
           end
         end
+      end
+
+      def text_synthesis
+        @text_synthesis ||= TextToSpeechApiClient::Synthesiser.new(
+          text: intent.fulfillment_text
+        ).synthesise['audio_url']
       end
     end
   end

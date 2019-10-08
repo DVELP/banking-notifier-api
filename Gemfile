@@ -11,7 +11,9 @@ gem 'google-cloud-dialogflow'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
 gem 'rails', '~> 6.0.0'
+gem 'rest-client'
 gem 'sentry-raven'
+gem 'text_to_speech_api_client', github: 'DVELP/text_to_speech_api_client'
 gem 'twilio-ruby'
 
 group :development, :test do
