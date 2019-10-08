@@ -52,6 +52,8 @@ module Bot
           ) do |gather|
             gather.play(url: text_synthesis)
           end
+
+          r.redirect(api_twilio_voice_no_responses_path, method: 'POST')
         end
       end
 

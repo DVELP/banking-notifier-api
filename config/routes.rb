@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     namespace :twilio, defaults: { format: 'xml' } do
       namespace :voice do
         resources :interactions, only: [:create]
+        resources :no_responses, only: [:create]
         resources :outbound_calls, only: [:create]
       end
     end
